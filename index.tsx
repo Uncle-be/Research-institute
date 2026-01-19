@@ -10,7 +10,8 @@ interface ConsultationMessage {
 
 // --- AI Service Logic ---
 const getResearchConsultation = async (prompt: string) => {
-  const apiKey = (window as any).process?.env?.API_KEY || "";
+  // Use a safer check for the API key
+  const apiKey = typeof process !== 'undefined' ? process.env.API_KEY : '';
   
   if (!apiKey) {
     return "Welcome! I'm the Research Strategist. For direct project quotes or deep strategy, please message Uncle Blessing on WhatsApp at +2349033597562.";
@@ -361,5 +362,8 @@ const App: React.FC = () => {
 };
 
 // --- Render ---
-const root = ReactDOM.createRoot(document.getElementById('root')!);
-root.render(<App />);
+const container = document.getElementById('root');
+if (container) {
+  const root = ReactDOM.createRoot(container);
+  root.render(<App />);
+}
