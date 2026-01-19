@@ -215,7 +215,7 @@ const App: React.FC = () => {
                   Order Now <i className="fab fa-whatsapp"></i>
                 </a>
                 <a href="#publications" className="px-8 py-4 border border-slate-200 text-slate-600 rounded-2xl font-bold hover:bg-slate-50 transition">
-                  View Portfolio Portfolio
+                  View Portfolio
                 </a>
               </div>
             </div>
